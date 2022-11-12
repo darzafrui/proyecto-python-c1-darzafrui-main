@@ -38,7 +38,7 @@ Info = namedtuple('Info','row_ID, title, minima_edad_recomendada, netflix, hulu,
 Info(int, str, int, int, int, int, int, datetime.date, bool, float)
 
 ## Funciones implementadas
-Añade aquí descripciones genéricas de las funciones, que luego debes acompañar con comentarios de tipo documentación en el código
+Añade aquí descripciones genéricas de las funciones, que luego debes acompañar con comentarios de tipo documentación en el código.
 
 ### \<tv_shows.py\>
 
