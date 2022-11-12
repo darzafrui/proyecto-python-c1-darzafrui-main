@@ -45,7 +45,40 @@ Añade aquí descripciones genéricas de las funciones, que luego debes acompañ
 * **<lee_datos>**: lee los datos del fichero csv y devuelve una lista de tuplas de tipo Info con los datos del fichero. Para implementar esta función se han definido las siguientes funciones auxiliares en el módulo tv_shows.py:
   * **<with open >**: abre y lee el archivo.
     * **<for in >**: realiza un bucle.
+    
+* **<filtra_por_edades_minimas>**: el programa pide introducir la edad minima por la que desea filtrar los titulos de los shows, los cuales se califican en "all","7+","13+","16+","18+". Para ello he utilizado:
+  * **<for in >**: un blucle para recorrer el archivo extrayendo un valor
+    * **<if else>** : filtra a traves de una condición
+  * **<print>**: printea por pantalla el filtro hecho
+
+* **<contar_edades_minimas>**: crea un diccionario el cual las claves son las edades minimas que hay y los valores la cantidad de shows clasificados por cada edad:
+  * **< dict() >**: esta funcion crea un diccionario clave valor
+    * **<for in>** :vcrea un bucle recorriendo el dichero
+      * **<if else>**: filtra por edades contantabilizandolas
+
+* **<get_media_valoraciones>**: el programa recorre todas las valoraciones obteniendo su valor, con ellos hace una media ponderada y devuelve dicho valor:
+  * **<sum >**: suma todos los valores obtenidos
+  * **<7>**: divide
+  * **<len>**: cuenta la cantidades de valores, en este caso, de puntuaciones que hay
+
+* **<get_valoracion_minima_de_shows>**: coge las valoraciones obtenidas anteriormente y extrae el valor minimo de ellas
+  * **<min>**: obtiene el minimo valor de algun conjunto de ellos
+
+* **<get_show_por_puntuacion>**: extrae el show que tiene la valoracion minima, obtenida anteriorimente
+  * **<for in >**: un blucle para recorrer el archivo extrayendo una columna
+    * **<if else>** : filtra a traves de una condición
+
+* **<ordena_por_puntuacion>**: este porgrama filtra las puntuacines, y las ordena segun el valor que introduzcas:
+  * **<for in >**: un blucle para recorrer el archivo extrayendo un valor
+    * **<if else>** : filtra a traves de una condición
+  * **<.sort>**: ordena valores
+  * **<key lambda>**: aclara al programa por que columna quiere que filtre los valores, en este caso, las puntuaciones
+
 
 ### \<test_tv_shows.py\>
+
+Cada funcion del module "tv_shows" tiene en el modulo de test su correspundiente testeo, generalmente estas contienen un printeo con caracteres aclarando y embelleciendo las funciones. Hay dos en concretos que contienen:
+
+* **<input>**: esta funcion hace que tengas que introducir un valor en la terminal que toma como parametro en la funcion
 
 * **<main>**: ejecuta la funcion del modulo de tv_shows-py
