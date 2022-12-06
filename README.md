@@ -27,7 +27,7 @@ El dataset está compuesto por \<12\> columnas, con la siguiente descripción:
 * **\<prime_video>**: de tipo \<int\>,representa la disponibilidad que hay en Prime Video.
 * **\<disney>**: de tipo \<int\>, representa la disponibilidad que hay en Disney Plus.
 * **\<fecha_salida>**: de tipo \<date\>, representa la fehca de publicación de dicho título.
-* **\<español>**: de tipo \<bool\>, representa la disponibilidad que hay de dicho show en español como idioma.
+* **\<espanyol>**: de tipo \<bool\>, representa la disponibilidad que hay de dicho show en español como idioma.
 * **\<puntuacion_sobre_diez>**: de tipo \<float\>, representa la valoracion sobre 10 del show.
 ...
 
@@ -45,16 +45,13 @@ Añade aquí descripciones genéricas de las funciones, que luego debes acompañ
 * **<lee_datos>**: lee los datos del fichero csv y devuelve una lista de tuplas de tipo Info con los datos del fichero. Para implementar esta función se han definido las siguientes funciones auxiliares en el módulo tv_shows.py:
   * **<with open >**: abre y lee el archivo.
     * **<for in >**: realiza un bucle.
+
+* **<parse_espanyol>**: convierte el valor asociado a la columna "espanyol" a un boolean.
     
 * **<filtra_por_edades_minimas>**: el programa pide introducir la edad minima por la que desea filtrar los titulos de los shows, los cuales se califican en "all","7+","13+","16+","18+". Para ello he utilizado:
   * **<for in >**: un blucle para recorrer el archivo extrayendo un valor
     * **<if else>** : filtra a traves de una condición
   * **<print>**: printea por pantalla el filtro hecho
-
-* **<contar_edades_minimas>**: crea un diccionario el cual las claves son las edades minimas que hay y los valores la cantidad de shows clasificados por cada edad:
-  * **< dict() >**: esta funcion crea un diccionario clave valor
-    * **<for in>** :vcrea un bucle recorriendo el dichero
-      * **<if else>**: filtra por edades contantabilizandolas
 
 * **<get_media_valoraciones>**: el programa recorre todas las valoraciones obteniendo su valor, con ellos hace una media ponderada y devuelve dicho valor:
   * **<sum >**: suma todos los valores obtenidos
@@ -74,6 +71,21 @@ Añade aquí descripciones genéricas de las funciones, que luego debes acompañ
   * **<.sort>**: ordena valores
   * **<key lambda>**: aclara al programa por que columna quiere que filtre los valores, en este caso, las puntuaciones
 
+* **<contar_edades_minimas>**: crea un diccionario el cual las claves son las edades minimas que hay y los valores la cantidad de shows clasificados por cada edad:
+  * **< dict() >**: esta funcion crea un diccionario clave valor
+    * **<for in>** :vcrea un bucle recorriendo el dichero
+      * **<if else>**: filtra por edades contantabilizandolas
+
+* **<get_max_common_edad_minima>**: devuelve la clave que tiene asocidada el valor maximo de shows que contiene el diccionario de la funcion anterior, es decir "contar_edades_minimas".
+
+* **<calcular_porcentaje>**:recibe un valor sacado de un bucle for, y lo trabaja para sacar un porcentaje.
+* **<get_porcentaje_espanyol_por_edad>**: calcula el porcentaje de peliculas en espanyol que hay por cada edad mininma recomendada.
+
+* **<top_n_large_title_por_anyo>**: devuelve un diccionario el cual toma como clave los distintos anyos los cuales aparecen en las fechas de salidas de los shows y como valor los titulos mas largos, devuelve tantos titulos como "n" marque.
+
+* **<agrupacion_por_anyo_titulo>**: devuelve un diccionario en que el las claves son los anyos y el valor todos los titulos de shows que salieron ese anyo.
+
+* **<grafica_frecuencia_shows_por_edad>**: consiste en una gráfica tipo sectores en la cual los diferentes sectores son las distintas edades mínimas que hay por shows, y en lo que se basa dichos sectores son los porcentajes en los que aparacen en los shows dichas edades.
 
 ### \<test_tv_shows.py\>
 
